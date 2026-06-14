@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file event-service/Dockerfile --tag event-service:$(date +%s) -t event-service:latest --progress=plain
     - name: Inspect Image
-      run: docker inspect event-service --format='{{.Size}}' | numfmt --to=iec
+      run: docker inspect event-service
