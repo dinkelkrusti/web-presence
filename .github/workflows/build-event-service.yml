@@ -16,9 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Info
-      run: ls
     - name: Build
-      run: cargo build --verbose --manifest-path=./event-service/src/Cargo.toml
+      run: cargo build --verbose --manifest-path=./event-service/Cargo.toml
     - name: Run tests
-      run: cargo test --verbose --manifest-path=./event-service/src/Cargo.toml
+      run: cargo test --verbose --manifest-path=./event-service/Cargo.toml
