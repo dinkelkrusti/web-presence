@@ -1,14 +1,13 @@
 FROM rust:1.96-slim-bookworm AS build
-WORKDIR ./event-service
 
 RUN rustup target add x86_64-unknown-linux-musl && \
     apt update && \
     apt install -y musl-tools musl-dev && \
     update-ca-certificates
 
-COPY ./src ./src
-COPY ./Cargo.lock .
-COPY ./Cargo.toml .
+COPY ./event-service/src ./src
+COPY ./event-service/Cargo.lock .
+COPY ./event-service/Cargo.toml .
 
 RUN adduser \
     --disabled-password \
