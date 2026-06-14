@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file event-service/Dockerfile --tag event-service:$(date +%s)
+      run: docker build . --file event-service/Dockerfile --tag event-service:$(date +%s) -t event-service:latest
     - name: Inspect Image
       run: docker inspect event-service --format='{{.Size}}' | numfmt --to=iec
