@@ -1,4 +1,5 @@
 FROM rust:1.96-slim-bookworm AS build
+WORKDIR ./event-service
 
 RUN rustup target add x86_64-unknown-linux-musl && \
     apt update && \
@@ -7,6 +8,7 @@ RUN rustup target add x86_64-unknown-linux-musl && \
 
 COPY ./src ./src
 COPY ./Cargo.lock .
+COPY ./Cargo.toml .
 
 RUN adduser \
     --disabled-password \
