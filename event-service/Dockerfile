@@ -21,7 +21,7 @@ RUN adduser \
 RUN cargo build --target x86_64-unknown-linux-musl --release
 
 
-FROM rust:1.96-alpine3.21
+FROM scratch
 
 COPY --from=build /etc/passwd /etc/passwd
 COPY --from=build /etc/group /etc/group
