@@ -1,4 +1,5 @@
-use crate::{Event, EventRepository};
+use crate::{Event};
+use crate::port::driven::EventRepository;
 
 #[derive(Clone)]
 pub struct EventRepositoryInMemory {
