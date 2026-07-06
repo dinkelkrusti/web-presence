@@ -1,5 +1,6 @@
 use crate::{Event, EventRepository};
 
+#[derive(Clone)]
 pub struct EventRepositoryInMemory {
     events: Vec<Event>,
 }
