@@ -1,4 +1,5 @@
 use dioxus::prelude::*;
+use dioxus_primitives::navbar::Navbar;
 
 fn main() {
     launch(app);
@@ -16,13 +17,17 @@ fn app() -> Element {
 #[component]
 fn HeaderComponent() -> Element {
     rsx!(
-        h2 { "Event Planning"}
+        Navbar {
+            aria_label: "Eventually"
+        }
     )
 }
 
 #[component]
 fn EventComponent(name: String, date: String) -> Element {
-    rsx! { "{date}: {name}"}
+    rsx! {
+        "{date}: {name}"
+    }
 }
 
 #[component]
